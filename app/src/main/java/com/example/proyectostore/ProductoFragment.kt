@@ -24,8 +24,10 @@ class ProductoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProductoBinding.inflate(inflater, container, false)
-        val retrofit = RetrofitBuilder.create().getProductById("2")
+        val id = arguments?.getString("id")
+        val retrofit = RetrofitBuilder.create().getProductById(id.toString())
         val navController = findNavController()
+
 
         binding.buttonVolver.setOnClickListener{
             navController.navigate(R.id.action_productoFragment_to_searchFragment)
@@ -36,7 +38,7 @@ class ProductoFragment : Fragment() {
                 val resBody = response.body()
                 if (resBody != null) {
                     binding.textViewNombre.setText("${resBody.title}")
-                    binding.textViewPrecio.setText("${resBody.price}")
+                    binding.textViewPrecio.setText("$" + "${resBody.price}")
                     binding.textViewDescripcion.setText("${resBody.description}")
                     binding.textViewCalificacion.setText("${resBody.raiting}")
 
@@ -45,6 +47,7 @@ class ProductoFragment : Fragment() {
 
 
                 }
+
             }
 
             override fun onFailure(call: Call<ProductoEntry>, t: Throwable) {

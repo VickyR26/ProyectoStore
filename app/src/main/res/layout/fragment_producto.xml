@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="$0.00"
         android:textSize="20sp"
-        android:textColor="@color/grisO"
+        android:textColor="#008000"
         app:layout_constraintTop_toBottomOf="@id/textViewNombre"
         app:layout_constraintLeft_toLeftOf="parent"
 
@@ -51,7 +51,6 @@
         android:textColor="@color/grisO"
         app:layout_constraintTop_toBottomOf="@id/textViewPrecio"
         app:layout_constraintLeft_toLeftOf="parent"
-
         android:layout_marginHorizontal="10dp"
         />
 
@@ -70,7 +69,7 @@
         android:id="@+id/buttonVolver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="<-"
+        android:text="Return"
         app:layout_constraintLeft_toRightOf="@id/textViewNombre"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="500dp"

@@ -29,7 +29,6 @@ class SearchFragment : Fragment() {
         val navController = findNavController()
 
         binding.buttonSearch.setOnClickListener{
-            val id = binding.editTextBuscar.text.toString()
 
             navController.navigate(R.id.action_searchFragment_to_productoFragment)
         }
